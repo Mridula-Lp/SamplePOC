@@ -2,6 +2,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using SampleCRUD.DataModel.Data;
+using SampleCRUD.Repository.Abstract;
+using SampleCRUD.Repository.Concrete;
+using SampleCRUD.Service;
+using SampleCRUD.Service.Abstract;
+using SampleCRUD.Service.Concrete;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -25,6 +31,15 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireNonAlphanumeric = true;
 });
 #endregion
+
+#region Dependency Injection
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddTransient<ISettingService, SettingService>();
+builder.Services.AddTransient<ISettingRepository, SettingRepository>();
+#endregion
+
 #region Swagger Service
 builder.Services.AddSwaggerGen(option =>
 {
@@ -54,6 +69,13 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 #endregion
+
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddRazorPages();
+
+builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfiles)));
+
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {

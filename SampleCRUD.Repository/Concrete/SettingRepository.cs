@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using SampleCRUD.DataModel;
 using SampleCRUD.DataModel.Data;
 using SampleCRUD.Repository.Abstract;
@@ -13,6 +14,10 @@ namespace SampleCRUD.Repository.Concrete
     public class SettingRepository: ISettingRepository
     {
         private readonly SampleCRUDContext _context;
+        public SettingRepository(SampleCRUDContext context)
+        {
+            _context = context; 
+        }
         public async Task<bool> AddSetting(SettingDataModel setting)
         {
             setting.CreatedDate =DateTime.Now;
