@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "iM9U3S92H53KuOFar7HfxME3JfeH2V1cDVvDNo+nQL0agepNBrs29aYwocPONBpCZEHSD5SItgE43ckLRikNTA==",
+  "success": true,
+  "projectFilePath": "E:\\SamplePOC\\SampleCRUD.ViewModel\\SampleCRUD.ViewModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mridula\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.9\\microsoft.windowsdesktop.app.ref.7.0.9.nupkg.sha512",
+    "C:\\Users\\Mridula\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.9\\microsoft.netcore.app.ref.7.0.9.nupkg.sha512",
+    "C:\\Users\\Mridula\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.9\\microsoft.aspnetcore.app.ref.7.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
