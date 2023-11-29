@@ -1,0 +1,12 @@
+/SampleCRUD/obj
+/SampleCRUD/bin
+/SampleCRUD.Core/obj
+/SampleCRUD.Core/bin
+/SampleCRUD.DataModel/obj
+/SampleCRUD.DataModel/bin
+/SampleCRUD.Repository/obj
+/SampleCRUD.Repository/bin
+/SampleCRUD.Service/obj
+/SampleCRUD.Service/bin
+/SampleCRUD.ViewModel/obj
+/SampleCRUD.ViewModel/bin
